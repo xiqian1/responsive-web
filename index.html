@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Responsive Desktop</title>
+
+    <script type="text/javascript">        
+        function display_ct() {
+        var x = new Date()
+        var refresh=1000;
+        mytime=setTimeout('display_ct()',refresh)
+
+        var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+        var hours = x.getHours( ) % 12;
+        hours = hours ? hours : 12;
+        hours=hours.toString().length==1? 0+hours.toString() : hours;
+
+        var minutes=x.getMinutes().toString()
+        minutes=minutes.length==1 ? 0+minutes : minutes;
+
+        var time= hours+":"+minutes+ampm;
+        document.getElementById('ct').innerHTML = time;
+        display_c();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="time">
+        <body onload=display_ct();>
+        <span id='ct' ></span>
+    </div>
+    
+    <div class="top">
+        <h1>Explore the universe by resizing the browser!</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div id="myCarousel" class="carousel slide" data-interval="false">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" ></li>
+            <li data-target="#myCarousel" ></li>
+            <li data-target="#myCarousel" ></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="japanbg.png">
+              <div class="carousel-caption">
+                  <h1 class="preview1">Preview</h1>
+              </div>
+            </div>
+      
+            <div class="item">
+              <img src="spacebg.jpg">
+                <div class="carousel-caption">
+                    <h1 class="preview2">Preview</h1>
+                </div>
+            </div>
+          
+            <div class="item">
+              <img src="moonbg.jpg">
+                <div class="carousel-caption">
+                    <h1 class="preview3">Preview</h1>
+                </div>
+            </div>
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            
+          </a>
+        </div>
+      </div>
+      
+</body>
+</html>
